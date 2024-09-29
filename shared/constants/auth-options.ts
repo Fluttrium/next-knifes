@@ -111,7 +111,7 @@ export const authOptions: AuthOptions = {
             email: user.email,
             fullName: user.name || 'User #' + user.id,
             password: hashSync(user.id.toString(), 10),
-            verified: true,
+            verified: true,// мб null поставить надо
             provider: account?.provider,
             providerId: account?.providerAccountId,
           },
