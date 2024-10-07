@@ -1,4 +1,5 @@
 import { Header } from '@/shared/components/shared';
+import { Footer } from '@/shared/components/shared/footer';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
@@ -20,6 +21,9 @@ export default function HomeLayout({
       </Suspense>
       {children}
       {modal}
+      <Suspense>
+        <Footer />
+      </Suspense>
     </main>
   );
 }
