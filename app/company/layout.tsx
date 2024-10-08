@@ -4,16 +4,15 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Ножи СПБ | Главная',
+  title: 'Ножи СПБ | О Компании',
 };
 
-export default function HomeLayout({
-  children,
-  modal,
-}: Readonly<{
+interface HomeLayoutProps {
   children: React.ReactNode;
   modal: React.ReactNode;
-}>) {
+}
+
+export default function HomeLayout({ children, modal }: HomeLayoutProps) {
   return (
     <main className="min-h-screen">
       <Suspense>
