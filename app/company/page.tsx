@@ -9,10 +9,10 @@ export default function About() {
 
       <Container className="mt-10 pb-14">
         <div className="space-y-6">
-        {/* <blockquote className="italic text-gray-600">
+        <blockquote className="italic text-gray-600">
   &ldquo;Если этот нож вас подвёл, то, скорее всего, вы просто делаете что-то не так.&rdquo; — 
   <span className="font-bold"> Ножи СПБ</span>
-</blockquote> */}
+</blockquote>
           <p>
             Добро пожаловать в мир Ножи СПБ — где мы забиваем на скучные правила и создаём ножи для настоящей жизни. Мы не любим лишний пафос, и наши ножи — это не про красивый фасад. Мы делаем инструменты, которые сработают, когда это действительно нужно. Забудьте про маркетинговый блеск — наши ножи просто работают, и всё.
           </p>
