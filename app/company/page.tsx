@@ -9,8 +9,8 @@ export default function About() {
 
       <Container className="mt-10 pb-14">
         <div className="space-y-6">
-          <blockquote className="italic text-gray-600">
-            “Если этот нож вас подвёл, то, скорее всего, вы просто делаете что-то не так.” — 
+        <blockquote className="italic text-gray-600">
+            &ldquo;Если этот нож вас подвёл, то, скорее всего, вы просто делаете что-то не так.&rdquo; — 
             <span className="font-bold"> Ножи СПБ</span>
           </blockquote>
           <p>
