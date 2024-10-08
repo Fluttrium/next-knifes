@@ -82,7 +82,7 @@ export const Header: React.FC<Props> = ({ hasSearch = true, hasCart = true, clas
         <Container>
           <ul className="flex flex-wrap gap-4 justify-center text-xs font-medium text-gray-700 uppercase">
             <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/about">О компании</Link>
+              <Link href="/company">О компании</Link>
             </li>
             <li className="hover:text-red-500 transition duration-200 ease-in-out">
               <Link href="/dealers">Дилеры Ножи СПБ</Link>
