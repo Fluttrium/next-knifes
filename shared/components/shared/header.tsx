@@ -112,7 +112,7 @@ export const Header: React.FC<Props> = ({ hasSearch = true, hasCart = true, clas
               <Link href="/blog">Блог</Link>
             </li>
             <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/for-bloggers">Для Блогеров</Link>
+              <Link href="/blogers">Для Блогеров</Link>
             </li>
           </ul>
         </Container>
