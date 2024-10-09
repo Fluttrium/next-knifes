@@ -94,7 +94,7 @@ export const Header: React.FC<Props> = ({ hasSearch = true, hasCart = true, clas
               <Link href="/delivery">Доставка</Link>
             </li>
             <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/warranty">Гарантия и Сервис</Link>
+              <Link href="/garanty">Гарантия и Сервис</Link>
             </li>
             <li className="hover:text-red-500 transition duration-200 ease-in-out">
               <Link href="/return">Возврат и Обмен</Link>
