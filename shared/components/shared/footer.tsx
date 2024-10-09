@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
           {/* Левая часть с логотипом */}
           <ul className="flex flex-wrap gap-4 justify-center text-xs font-medium text-gray-700 uppercase mt-4 lg:mt-0">
             <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/about">О компании</Link>
+              <Link href="/company">О компании</Link>
             </li>
             <li className="hover:text-red-500 transition duration-200 ease-in-out">
               <Link href="/dealers">Дилеры</Link>

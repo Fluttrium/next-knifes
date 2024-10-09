@@ -79,43 +79,43 @@ export const Header: React.FC<Props> = ({ hasSearch = true, hasCart = true, clas
 
       {/* Разделы под хедером */}
       <nav className="border-b py-4 bg-gray-50">
-        <Container>
-          <ul className="flex flex-wrap gap-4 justify-center text-xs font-medium text-gray-700 uppercase">
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/company">О компании</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/dealers">Дилеры Ножи СПБ</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/payment">Оплата</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/delivery">Доставка</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/garanty">Гарантия и Сервис</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/return">Возврат и Обмен</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/discounts">Скидки</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/certificates">Сертификаты</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/contacts">Контакты</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/blog">Блог</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/blogers">Для Блогеров</Link>
-            </li>
-          </ul>
-        </Container>
+      <Container>
+      <ul className="flex flex-wrap gap-4 justify-center text-xs font-medium text-gray-700 uppercase">
+        <li className="hover:text-red-500 transition duration-200 ease-in-out">
+          <Link href="/company">О компании</Link>
+        </li>
+        <li className="hover:text-red-500 transition duration-200 ease-in-out">
+          <Link href="/dealers">Дилеры Ножи СПБ</Link>
+        </li>
+        <li className="hover:text-red-500 transition duration-200 ease-in-out">
+          <Link href="/payment">Оплата</Link>
+        </li>
+        <li className="hover:text-red-500 transition duration-200 ease-in-out">
+          <Link href="/delivery">Доставка</Link>
+        </li>
+        <li className="hover:text-red-500 transition duration-200 ease-in-out">
+          <Link href="/garanty">Гарантия и Сервис</Link>
+        </li>
+        <li className="hover:text-red-500 transition duration-200 ease-in-out">
+          <Link href="/return">Возврат и Обмен</Link>
+        </li>
+        <li className="hover:text-red-500 transition duration-200 ease-in-out">
+          <Link href="/discounts">Скидки</Link>
+        </li>
+        <li className="hover:text-red-500 transition duration-200 ease-in-out">
+          <Link href="/certificates">Сертификаты</Link>
+        </li>
+        <li className="hover:text-red-500 transition duration-200 ease-in-out">
+          <Link href="/contacts">Контакты</Link>
+        </li>
+        <li className="hover:text-red-500 transition duration-200 ease-in-out">
+          <Link href="/blog">Блог</Link>
+        </li>
+        <li className="hover:text-red-500 transition duration-200 ease-in-out">
+          <Link href="/blogers">Для Блогеров</Link>
+        </li>
+      </ul>
+    </Container>
       </nav>
     </>
   );
