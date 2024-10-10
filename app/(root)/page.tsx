@@ -14,21 +14,21 @@ export default async function Home({ searchParams }: { searchParams: GetSearchPa
 
   return (
     <>
-      {/* Заголовок */}
-      <Container className="mt-10">
+      {/* Заголовок с отступом слева для мобильных */}
+      <Container className="mt-10 pl-4 md:pl-0">
         <Title text="Все товары" size="lg" className="font-extrabold" />
       </Container>
 
-      {/* TopBar с горизонтальной прокруткой на мобильных устройствах */}
-      <Container className="mt-4">
-        <div className="overflow-x-auto">
+      {/* TopBar с фиксированным положением и горизонтальной прокруткой на мобильных устройствах */}
+      <Container className="mt-4 sticky top-0 bg-white z-10 shadow-md"> {/* Фиксированное положение */}
+        <div className="overflow-x-auto pl-4 md:pl-0">
           <TopBar categories={categories.filter((category) => category.products.length > 0)} />
         </div>
       </Container>
 
       {/* Stories с горизонтальной прокруткой на мобильных устройствах */}
       <Container className="mt-10">
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto pl-4 md:pl-0">
           <Stories />
         </div>
       </Container>
@@ -36,8 +36,8 @@ export default async function Home({ searchParams }: { searchParams: GetSearchPa
       {/* Контент */}
       <Container className="mt-10 pb-14">
         <div className="flex flex-col lg:flex-row gap-[80px]">
-          {/* Фильтрация */}
-          <div className="w-full lg:w-[250px]">
+          {/* Фильтрация с отступом слева и справа для мобильных */}
+          <div className="w-full lg:w-[250px] pl-4 pr-4 md:pl-0 md:pr-0"> {/* Добавлен pr-4 */}
             <Suspense>
               <Filters />
             </Suspense>
@@ -50,7 +50,7 @@ export default async function Home({ searchParams }: { searchParams: GetSearchPa
                 (category) =>
                   category.products.length > 0 && (
                     <div key={category.id}>
-                      <div className={`flex ${category.products.length > 2 ? 'overflow-x-auto' : ''}`}>
+                      <div className={`flex ${category.products.length > 2 ? 'overflow-x-auto' : ''} pl-4 md:pl-0`}>
                         <ProductsGroupList
                           title={category.name}
                           categoryId={category.id}
