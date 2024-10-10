@@ -22,28 +22,34 @@ export const ProductCard: React.FC<Props> = ({
   ingredients,
   className,
 }) => {
+  // Функция для ограничения имени до двух слов
+  const truncateName = (name: string) => {
+    const words = name.split(' ');
+    return words.length > 2 ? `${words.slice(0, 2).join(' ')}...` : name;
+  };
+
   return (
-    <div className={`${className} w-[200px] h-[300px]`}> {/* Фиксированная ширина и высота карточки */}
+    <div className={`${className} w-[200px] h-[300px]`}>
       <Link href={`/product/${id}`}>
-        <div className="flex justify-center p-4 bg-secondary rounded-lg h-[160px]"> {/* Высота контейнера изображения */}
-          <img className="w-full h-full object-contain" src={imageUrl} alt={name} /> {/* Изображение занимает весь контейнер */}
+        <div className="flex justify-center p-4 bg-secondary rounded-lg h-[160px]">
+          <img className="w-full h-full object-contain" src={imageUrl} alt={name} />
         </div>
 
-        <Title text={name} size="sm" className="mb-1 mt-2 font-bold" /> {/* Убрали дополнительные отступы для компактности */}
+        <Title text={truncateName(name)} size="sm" className="mb-1 mt-2 font-bold" /> {/* Применяем функцию для обрезки имени */}
 
         <p className="text-xs text-gray-400">
           {ingredients.map((ingredient) => ingredient.name).join(', ')}
         </p>
 
         <div className="flex justify-between items-center mt-2">
-          <span className="text-xs"> {/* Уменьшен размер текста для мобильной версии */}
+          <span className="text-xs">
             <b>{price} ₽</b>
           </span>
 
-          <Button variant="secondary" className="text-xs font-bold"> {/* Уменьшен размер кнопки для мобильной версии */}
-            <Plus size={16} className="mr-1" /> {/* Уменьшен размер иконки */}
-            <span className="hidden sm:inline">Добавить</span> {/* Скрываем текст для мобильной версии */}
-            <span className="inline sm:hidden"></span> {/* Показываем только иконку для мобильной версии */}
+          <Button variant="secondary" className="text-xs font-bold">
+            <Plus size={16} className="mr-1" />
+            <span className="hidden sm:inline">Добавить</span>
+            <span className="inline sm:hidden"></span>
           </Button>
         </div>
       </Link>
