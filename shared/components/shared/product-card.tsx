@@ -37,7 +37,8 @@ export const ProductCard: React.FC<Props> = ({
 
         <Title text={truncateName(name)} size="sm" className="mb-1 mt-2 font-bold" /> {/* Применяем функцию для обрезки имени */}
 
-        <p className="text-xs text-gray-400">
+        {/* Ингредиенты скрыты на мобильных устройствах */}
+        <p className="text-xs text-gray-400 hidden md:block">
           {ingredients.map((ingredient) => ingredient.name).join(', ')}
         </p>
 
@@ -49,7 +50,6 @@ export const ProductCard: React.FC<Props> = ({
           <Button variant="secondary" className="text-xs font-bold">
             <Plus size={16} className="mr-1" />
             <span className="hidden sm:inline">Добавить</span>
-            <span className="inline sm:hidden"></span>
           </Button>
         </div>
       </Link>

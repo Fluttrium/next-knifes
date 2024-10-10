@@ -8,84 +8,58 @@ import Link from 'next/link';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className={cn('border-t py-8 bg-gray-50')}>
-      <Container className="flex flex-col items-center">
-      <Link href="/">
-            <div className="flex items-center gap-4 mb-6">
-              <Image src="/logo1.png" alt="Logo" width={35} height={35} />
-              <div>
-                <h1 className="text-2xl uppercase font-black">Ножи СПБ</h1>
-                <p className="text-sm text-gray-400 leading-3">Доставка по РФ</p>
-              </div>
-            </div>
-          </Link>
-        {/* Верхняя часть футера */}
-        <div className="flex flex-col lg:flex-row justify-between items-center w-full">
-          {/* Левая часть с логотипом */}
-          <ul className="flex flex-wrap gap-4 justify-center text-xs font-medium text-gray-700 uppercase mt-4 lg:mt-0">
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/company">О компании</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/dealers">Дилеры</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/delivery">Доставка</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/payment">Оплата</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/installment">Купить в рассрочку</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/program">Программа для спасателей, военных и правоохранителей</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/faq">Вопрос-ответ</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/catalog">Каталог</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/for-dealers">Дилерам</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/offer-agreement">Договор оферты</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/privacy-policy">Политика конфиденциальности</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/feedback">Обратная связь</Link>
-            </li>
-            <li className="hover:text-red-500 transition duration-200 ease-in-out">
-              <Link href="/contacts">Контакты</Link>
-            </li>
-          </ul>
-        </div>
+    <footer className={cn('border-t py-6 bg-gray-50')}>
+      <Container className="flex flex-col items-center px-4">
+        {/* Логотип */}
+        <Link href="/" className="flex items-center gap-2 mb-4">
+          <Image src="/logo1.png" alt="Logo" width={30} height={30} />
+          <div>
+            <h1 className="text-lg uppercase font-bold">Ножи СПБ</h1>
+            <p className="text-xs text-gray-400">Доставка по РФ</p>
+          </div>
+        </Link>
+
+        {/* Меню ссылок */}
+        <ul className="flex flex-col gap-2 items-center text-xs font-medium text-gray-700 uppercase mt-4">
+          <li className="hover:text-red-500 transition duration-200 ease-in-out">
+            <Link href="/company">О компании</Link>
+          </li>
+          <li className="hover:text-red-500 transition duration-200 ease-in-out">
+            <Link href="/dealers">Дилеры</Link>
+          </li>
+          <li className="hover:text-red-500 transition duration-200 ease-in-out">
+            <Link href="/delivery">Доставка</Link>
+          </li>
+          <li className="hover:text-red-500 transition duration-200 ease-in-out">
+            <Link href="/payment">Оплата</Link>
+          </li>
+          <li className="hover:text-red-500 transition duration-200 ease-in-out">
+            <Link href="/catalog">Каталог</Link>
+          </li>
+          <li className="hover:text-red-500 transition duration-200 ease-in-out">
+            <Link href="/contacts">Контакты</Link>
+          </li>
+        </ul>
 
         {/* Нижняя часть футера */}
-        <div className="w-full border-t mt-8 pt-4 flex flex-col lg:flex-row justify-between items-center text-center lg:text-left">
-          <p className="text-md text-gray-500">
+        <div className="w-full border-t mt-6 pt-4 flex flex-col items-center text-center">
+          <p className="text-sm text-gray-500 mb-2">
             ООО "Fluttrium" &copy; {new Date().getFullYear()}
           </p>
 
-          {/* Контакты и адрес */}
-          <div className="lg:mt-0">
-            <p className="text-sm text-gray-500">+79210112794</p>
-            <p className="text-sm text-gray-500">
-              г. Москва, Киевское шоссе, 6 стр. 1, БЦ Comcity, корпус А2
-            </p>
+          {/* Контакты */}
+          <div className="text-sm text-gray-500 mb-2">
+            <p>+79210112794</p>
+            <p>Москва, Киевское шоссе, 6 стр. 1, БЦ Comcity, корпус А2</p>
           </div>
 
           {/* Социальные сети */}
-          <div className="flex gap-4 mt-4 lg:mt-0">
+          <div className="flex gap-4 mt-2">
             <Link href="https://vk.com" aria-label="VK" className="hover:text-red-500 transition duration-200 ease-in-out">
               ВК
             </Link>
             <Link href="https://t.me" aria-label="Telegram" className="hover:text-red-500 transition duration-200 ease-in-out">
-            Telegram
+              Telegram
             </Link>
             <Link href="https://instagram.com" aria-label="Instagram" className="hover:text-red-500 transition duration-200 ease-in-out">
               Инстаграм

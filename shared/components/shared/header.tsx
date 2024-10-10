@@ -52,7 +52,7 @@ export const Header: React.FC<Props> = ({ hasSearch = true, hasCart = true, clas
       <header className={cn('border-b md:hidden', className)}>
         <Container className="flex items-center justify-between py-4">
           {/* Левая часть: Бургер-меню для мобильных устройств */}
-          <div className="flex items-center">
+          <div className="flex items-center ml-2">
             <button className="text-2xl">
               <FiMenu />
             </button>
