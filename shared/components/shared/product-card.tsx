@@ -23,26 +23,27 @@ export const ProductCard: React.FC<Props> = ({
   className,
 }) => {
   return (
-    <div className={className}>
+    <div className={`${className} w-[200px] h-[300px]`}> {/* Фиксированная ширина и высота карточки */}
       <Link href={`/product/${id}`}>
-        <div className="flex justify-center p-4 sm:p-6 bg-secondary rounded-lg h-[180px] sm:h-[260px]">
-          <img className="w-[180px] sm:w-[215px] h-[140px] sm:h-[215px]" src={imageUrl} alt={name} />
+        <div className="flex justify-center p-4 bg-secondary rounded-lg h-[160px]"> {/* Высота контейнера изображения */}
+          <img className="w-full h-full object-contain" src={imageUrl} alt={name} /> {/* Изображение занимает весь контейнер */}
         </div>
 
-        <Title text={name} size="sm" className="mb-1 mt-2 sm:mt-3 font-bold" />
+        <Title text={name} size="sm" className="mb-1 mt-2 font-bold" /> {/* Убрали дополнительные отступы для компактности */}
 
-        <p className="text-xs sm:text-sm text-gray-400">
+        <p className="text-xs text-gray-400">
           {ingredients.map((ingredient) => ingredient.name).join(', ')}
         </p>
 
-        <div className="flex justify-between items-center mt-2 sm:mt-4">
-          <span className="text-[16px] sm:text-[20px]">
-            от <b>{price} ₽</b>
+        <div className="flex justify-between items-center mt-2">
+          <span className="text-xs"> {/* Уменьшен размер текста для мобильной версии */}
+            <b>{price} ₽</b>
           </span>
 
-          <Button variant="secondary" className="text-sm sm:text-base font-bold">
-            <Plus size={20} className="mr-1" />
-            Добавить
+          <Button variant="secondary" className="text-xs font-bold"> {/* Уменьшен размер кнопки для мобильной версии */}
+            <Plus size={16} className="mr-1" /> {/* Уменьшен размер иконки */}
+            <span className="hidden sm:inline">Добавить</span> {/* Скрываем текст для мобильной версии */}
+            <span className="inline sm:hidden"></span> {/* Показываем только иконку для мобильной версии */}
           </Button>
         </div>
       </Link>
