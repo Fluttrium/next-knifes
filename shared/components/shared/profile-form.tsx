@@ -12,7 +12,6 @@ import { Title } from './title';
 import { FormInput } from './form';
 import { Button } from '../ui';
 import { updateUserInfo } from '@/app/actions';
-
 interface Props {
   data: User;
 }
@@ -36,11 +35,11 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
         password: data.password,
       });
 
-      toast.error('Данные обновлены 📝', {
+      toast.success('Данные обновлены 📝', {
         icon: '✅',
       });
     } catch (error) {
-      return toast.error('Ошибка при обновлении данных', {
+      toast.error('Ошибка при обновлении данных', {
         icon: '❌',
       });
     }
@@ -53,18 +52,18 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
   };
 
   return (
-    <Container className="my-10">
-      <Title text={`Личные данные | #${data.id}`} size="md" className="font-bold" />
+    <Container className="my-10 px-4 sm:px-6 lg:px-8">
+      <Title text={`Личные данные | #${data.id}`} size="md" className="font-bold text-center" />
 
       <FormProvider {...form}>
-        <form className="flex flex-col gap-5 w-96 mt-10" onSubmit={form.handleSubmit(onSubmit)}>
+        <form className="flex flex-col gap-5 w-full max-w-sm mx-auto mt-10" onSubmit={form.handleSubmit(onSubmit)}>
           <FormInput name="email" label="E-Mail" required />
           <FormInput name="fullName" label="Полное имя" required />
 
           <FormInput type="password" name="password" label="Новый пароль" required />
           <FormInput type="password" name="confirmPassword" label="Повторите пароль" required />
 
-          <Button disabled={form.formState.isSubmitting} className="text-base mt-10" type="submit">
+          <Button disabled={form.formState.isSubmitting} className="text-base mt-5" type="submit">
             Сохранить
           </Button>
 
