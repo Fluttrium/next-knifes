@@ -55,8 +55,8 @@ export const Stories: React.FC<Props> = ({ className }) => {
 
         {open && (
           <div className="absolute left-0 top-0 w-full h-full bg-black/80 flex items-center justify-center z-30">
-            <div className="relative" style={{ width: 520 }}>
-              <button className="absolute -right-10 -top-5 z-30" onClick={() => setOpen(false)}>
+            <div className="relative" style={{ width: '90%', maxWidth: 520 }}>
+              <button className="absolute -right-5 -top-5 z-30" onClick={() => setOpen(false)}>
                 <X className="absolute top-0 right-0 w-8 h-8 text-white/50" />
               </button>
 
@@ -64,13 +64,28 @@ export const Stories: React.FC<Props> = ({ className }) => {
                 onAllStoriesEnd={() => setOpen(false)}
                 stories={selectedStory?.items.map((item) => ({ url: item.sourceUrl })) || []}
                 defaultInterval={3000}
-                width={520}
+                width="100%" // Установим ширину на 100% для мобильных
                 height={800}
               />
             </div>
           </div>
         )}
       </Container>
+
+      {/* Мобильные стили */}
+      <style jsx>{`
+        @media (max-width: 640px) {
+          img {
+            width: 50%; // Адаптируем изображения для мобильных
+            height: auto; // Авто высота для сохранения пропорций
+          }
+
+          .relative {
+            width: 100%; // Полная ширина для мобильных
+            height: auto; // Авто высота для мобильных
+          }
+        }
+      `}</style>
     </>
   );
 };
