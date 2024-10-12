@@ -61,16 +61,16 @@ export const ChoosePizzaForm: React.FC<Props> = ({
 
   return (
     <div className={cn(className, 'flex flex-col md:flex-row flex-1 h-full overflow-hidden')}>
-      {/* Изображение пиццы */}
-      <PizzaImage imageUrl={imageUrl} size={size} className="mb-5 md:mb-0" />
+      {/* Изображение пиццы - изменяем размер для мобильного */}
+      <PizzaImage imageUrl={imageUrl} size={size} className="mb-5 md:mb-0 md:w-[240px] w-[80%] mx-auto" />
 
       {/* Информация о пицце */}
-      <div className="w-full md:w-[490px] bg-[#f7f6f5] p-4 md:p-7 flex flex-col h-full">
-        <div className="flex-1 overflow-auto scrollbar"> {/* Обертка для прокрутки */}
+      <div className="w-full md:w-[490px] bg-[#f7f6f5] p-4 md:p-7 flex flex-col h-full overflow-auto"> {/* Обертка для прокрутки */}
+        <div className="flex-1">
           <Title text={name} size="md" className="font-extrabold mb-1 text-center md:text-left" />
           <p className="text-gray-400 text-center md:text-left">{textDetaills}</p>
 
-          {/* Варианты размера и типа пиццы
+          {/* Варианты размера и типа пиццы */}
           <div className="flex flex-col gap-4 mt-5">
             <GroupVariants
               items={availableSizes}
@@ -83,7 +83,7 @@ export const ChoosePizzaForm: React.FC<Props> = ({
               value={String(type)}
               onClick={(value) => setType(Number(value) as PizzaType)}
             />
-          </div> */}
+          </div>
 
           {/* Ингредиенты */}
           <div className="bg-gray-50 p-3 sm:p-5 rounded-md h-[150px] sm:h-[210px] mt-5 overflow-auto"> 
