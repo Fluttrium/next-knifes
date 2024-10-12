@@ -61,46 +61,46 @@ export const ChoosePizzaForm: React.FC<Props> = ({
   };
 
   return (
-    <div className={cn(className, 'flex flex-col md:flex-row flex-1')}>
+    <div className={cn(className, 'flex flex-col md:flex-row flex-1 h-full')}>
       {/* Изображение пиццы */}
       <PizzaImage imageUrl={imageUrl} size={size} className="mb-5 md:mb-0" />
 
       {/* Информация о пицце */}
-      <div className="w-full md:w-[490px] bg-[#f7f6f5] p-4 md:p-7">
-        <Title text={name} size="md" className="font-extrabold mb-1 text-center md:text-left" />
+      <div className="w-full md:w-[490px] bg-[#f7f6f5] p-4 md:p-7 flex flex-col h-full">
+        <div className="flex-1 overflow-auto scrollbar"> {/* Обертка для прокрутки */}
+          <Title text={name} size="md" className="font-extrabold mb-1 text-center md:text-left" />
 
-        <p className="text-gray-400 text-center md:text-left">{textDetaills}</p>
+          <p className="text-gray-400 text-center md:text-left">{textDetaills}</p>
 
-        {/* Варианты размера и типа пиццы */}
-        
-        <div className="flex flex-col gap-4 mt-5">
-          <GroupVariants
-            items={availableSizes}
-            value={String(size)}
-            onClick={(value) => setSize(Number(value) as PizzaSize)}
-          />
+          {/* Варианты размера и типа пиццы */}
+          <div className="flex flex-col gap-4 mt-5">
+            <GroupVariants
+              items={availableSizes}
+              value={String(size)}
+              onClick={(value) => setSize(Number(value) as PizzaSize)}
+            />
 
-          <GroupVariants
-            items={pizzaTypes}
-            value={String(type)}
-            onClick={(value) => setType(Number(value) as PizzaType)}
-          />
-        </div>
-        
+            <GroupVariants
+              items={pizzaTypes}
+              value={String(type)}
+              onClick={(value) => setType(Number(value) as PizzaType)}
+            />
+          </div>
 
-        {/* Ингредиенты */}
-        <div className="bg-gray-50 p-3 sm:p-5 rounded-md h-[150px] sm:h-[210px] overflow-auto scrollbar mt-5"> {/* Уменьшена высота */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
-            {ingredients.map((ingredient) => (
-              <IngredientItem
-                key={ingredient.id}
-                name={ingredient.name}
-                price={ingredient.price}
-                imageUrl={ingredient.imageUrl}
-                onClick={() => addIngredient(ingredient.id)}
-                active={selectedIngredients.has(ingredient.id)}
-              />
-            ))}
+          {/* Ингредиенты */}
+          <div className="bg-gray-50 p-3 sm:p-5 rounded-md h-[150px] sm:h-[210px] mt-5"> 
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 overflow-auto"> {/* Прокрутка для списка ингредиентов */}
+              {ingredients.map((ingredient) => (
+                <IngredientItem
+                  key={ingredient.id}
+                  name={ingredient.name}
+                  price={ingredient.price}
+                  imageUrl={ingredient.imageUrl}
+                  onClick={() => addIngredient(ingredient.id)}
+                  active={selectedIngredients.has(ingredient.id)}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
