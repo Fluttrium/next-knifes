@@ -65,18 +65,22 @@ export const Header: React.FC<Props> = ({ hasSearch = true, hasCart = true, clas
             </div>
           </Link>
 
-          {/* Правая часть: Корзина */}
-          <div className="flex items-center">
+          {/* Правая часть: Корзина и Профиль */}
+          <div className="flex items-center gap-3">
             {hasCart && <CartButton />}
+            <ProfileButton onClickSignIn={() => setOpenAuthModal(true)} />
           </div>
+        
+
+        {/* Модальное окно авторизации */}
+        <AuthModal open={openAuthModal} onClose={() => setOpenAuthModal(false)} />
         </Container>
-       
+        {/* Поиск */}
         {hasSearch && (
             <div className="mx-10 flex-1">
               <SearchInput />
             </div>
           )}
-         
       </header>
 
       {/* Десктопный хедер */}
